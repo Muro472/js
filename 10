@@ -1,0 +1,67 @@
+#0
+function year(num){
+    switch(num){
+        case "12":
+        case "1":
+        case "2":
+            alert("зима");
+            break;
+        case "3":
+        case "4":
+        case "5":
+            alert("весна");
+            break;
+        case "6":
+        case "7":
+        case "8":
+            alert("літо");
+            break;
+        case "9":
+        case "10":
+        case "11":
+            alert("осінь");
+            break;
+    }
+}
+#1
+function month(num){
+    switch(num){
+        case "12":
+            alert("грудень");
+            break;
+        case "1":
+            alert("січень");
+            break;
+        case "2":
+            alert("лютий");
+            break;
+        case "3":
+            alert("березень");
+            break;
+        case "4":
+            alert("квітень");
+            break;
+        case "5":
+            alert("травень");
+            break;
+        case "6":
+            alert("червень");
+            break;
+        case "7":
+            alert("липень");
+            break;
+        case "8":
+            alert("серпень");
+            break;
+        case "9":
+            alert("вересень");
+            break;
+        case "10":
+            alert("жовтень");
+            break;
+        case "11":
+            alert("листопад");
+            break;
+    }
+}
+#3
