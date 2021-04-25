@@ -1,0 +1,99 @@
+#1
+let sum = 0;
+let da = 0;
+while(true){
+    da = prompt();
+    if(da != "0"){
+        sum += +da;
+    }else{
+        break;
+    }
+}
+alert(sum);
+#2
+let sum = 0;
+let da = 0;
+while(true){
+    da = prompt();
+    if(da != "0"){
+        sum *= +da;
+    }else{
+        break;
+    }
+}
+alert(sum);
+#3
+let sum = prompt();
+let da = 0;
+while(true){
+    da = prompt();
+    if(da != "a"){
+        sum = da + sum;
+    }else{
+        break;
+    }
+}
+alert(sum);
+#4
+let min = +prompt("min");
+let max = +prompt("max");
+while(true){
+    if(min < max){
+        alert(min + " - " + max);
+        min++;
+        max--;
+    }else{
+        break;
+    }
+}
+#5
+alert("1:hello \n2:wait\n3:bye\n4:exit");
+let num;
+while(true){
+    num = +prompt();
+    if(num == 1){
+        alert("hello");
+    }else if(num == 2){
+        alert("wait");
+    }else if(num == 3){
+        alert("bye");
+    }else if(num == 4){
+        break;
+    }else{
+        alert("wrong num");
+    }
+}
+#6
+alert("1:int \n2:add 2\n3:add 3\n4:subtract 2\n5:subtract 3\n6:alert\n7:exit");
+let num;
+while(true){
+    da = +prompt();
+    if(da == 1){
+        num = +prompt();
+    }else if(da == 2){
+        num += 2;
+    }else if(da == 3){
+        num += 3;
+    }else if(da == 4){
+        num -= 2;
+    }else if(da == 5){
+        num -= 3;
+    }else if(da == 6){
+        alert(num);
+    }else{
+        break;
+    }
+    alert("1:int \n2:add 2\n3:add 3\n4:subtract 2\n5:subtract 3\n6:alert\n7:exit");
+}
+#8
+let num;
+let sum = 0;
+while(sum < 20){
+    num = +prompt();
+    sum += num; 
+}
+#9
+let password = 0;
+while(password != 78){
+    password = +prompt();
+}
