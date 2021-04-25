@@ -1,0 +1,59 @@
+#1
+let marks = [5,4,3,5,5,4,3];
+let sum = 0;
+let min = 5;
+for(let i = 0; i < marks.length; i++){
+    sum += marks[i];
+    if(min > marks[i]){
+        min = marks[i];
+    }
+}
+sum /= marks.length;
+switch(min){
+    case 1:
+    case 2:
+        alert("двойошник");
+        break;
+    case 3:
+        alert("тройошник");
+        break;
+    case 4:
+        alert("хорошист");
+        break;
+    case 5:
+        alert("відмінник");
+        break;
+}
+alert("середня оцінка " + sum)
+#2
+let days = [22,19,24,26,21,42,39];
+let lessThen20 = [];
+let min = 100;
+let max = 0;
+let workingDays = 0;
+let weekend = 0;
+for(let i = 0; i < days.length; i++){
+    if(days[i] < 20){
+        lessThen20.push(i);
+    }
+    if(min > days[i]){
+        min = i;
+    }
+    if(max < days[i]){
+        max = i;
+    }
+    if(i >= 4){
+        workingDays += days[i];
+    }else{
+        weekend += days[i];
+    }
+}
+#3
+let da = ["Костя","Мирослав","Іван","Андрій","Іван"];
+let count = 0;
+for(let i = 0; i < da.length; i++){
+    if(da[i] == "Іван"){
+        count++;
+    }
+}
+alert(count);
