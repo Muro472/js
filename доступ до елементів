@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+       class AddChecker{
+        constructor(minValue, maxValue){
+            this.minValue=minValue
+            this.maxValue=maxValue
+        }
+        getRandNum(minValue,maxValue){
+            minValue=minValue??this.minValue
+            maxValue=maxValue??this.maxValue
+            return minValue+Math.floor(Math.random()*(maxValue-minValue+1))
+        }
+        generateTask(){
+            this.firstNumInp.value=this.getRandNum()
+            this.secondNumInp.value=this.getRandNum()
+            this.answer.value=''
+            this.result.innerText=''
+        }
+        checkResult(){
+            setInterval(()=>this.move(),500)
+            const firstNum=parseInt(this.firstNumInp.value)
+            const secondNum=parseInt(this.secondNumInp.value)
+            const answer=parseInt(this.answer.value)
+            if(firstNum+secondNum===answer)
+                this.result.innerText='ok'
+            else
+                this.result.innerText=`No. Right answer=${firstNum+secondNum}`
+        }
+        move(){
+            const shiftLeft=this.getRandNum(-20,20)
+            const shiftTop=this.getRandNum(-20,20)
+            this.btn.style.left=parseInt(this.btn.style.left)+shiftLeft+'px'
+            this.btn.style.top=parseInt(this.btn.style.top)+shiftTop+'px'
+            
+            console.log(`${this.btn.style.left}`);
+        }
+        render(){
+            const mainDiv=document.createElement('div')
+
+            let div1=document.createElement('div')            
+            let label=document.createElement('label')
+            label.innerText='First number'
+            this.firstNumInp=document.createElement('input')
+            label.appendChild(this.firstNumInp)
+            div1.appendChild(label)
+            mainDiv.appendChild(div1)
+
+            div1=document.createElement('div')            
+            label=document.createElement('label')
+            label.innerText='Second number'
+            this.secondNumInp=document.createElement('input')
+            label.appendChild(this.secondNumInp)
+            div1.appendChild(label)
+            mainDiv.appendChild(div1)
+
+            div1=document.createElement('div')            
+            label=document.createElement('label')
+            label.innerText='Answer'
+            this.answer=document.createElement('input')
+            label.appendChild(this.answer)
+            div1.appendChild(label)
+            mainDiv.appendChild(div1)
+
+            div1=document.createElement('div')            
+            const btn=document.createElement('button')
+            btn.innerText='Check'
+            btn.onclick=this.checkResult.bind(this)
+            div1.style.position='absolute'
+            this.btn=div1
+            this.btn.style.left='100px'
+            this.btn.style.top='100px'
+            div1.appendChild(btn)
+            mainDiv.appendChild(div1)
+
+            div1=document.createElement('div')            
+            div1.innerText='Result: '
+            this.result=document.createElement('span')
+            div1.appendChild(this.result)
+            mainDiv.appendChild(div1)
+
+            this.generateTask()
+
+            
+            return mainDiv
+        }
+       }
+       //-----------------
+       window.onload=function(){
+           const tr1=new AddChecker(1,10)
+           const container=document.getElementById('container')
+           container.appendChild(tr1.render())
+
+           const tr2=new AddChecker(1,10)
+           const container2=document.getElementById('container2')
+           container2.appendChild(tr2.render())
+       }
+
+    </script>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <div id="container2">
+
+    </div>
+</body>
+</html>
