@@ -1,59 +1,72 @@
-#1
-let marks = [5,4,3,5,5,4,3];
-let sum = 0;
-let min = 5;
-for(let i = 0; i < marks.length; i++){
-    sum += marks[i];
-    if(min > marks[i]){
-        min = marks[i];
-    }
-}
-sum /= marks.length;
-switch(min){
-    case 1:
-    case 2:
-        alert("двойошник");
-        break;
-    case 3:
-        alert("тройошник");
-        break;
-    case 4:
-        alert("хорошист");
-        break;
-    case 5:
-        alert("відмінник");
-        break;
-}
-alert("середня оцінка " + sum)
-#2
-let days = [22,19,24,26,21,42,39];
-let lessThen20 = [];
-let min = 100;
-let max = 0;
-let workingDays = 0;
-let weekend = 0;
-for(let i = 0; i < days.length; i++){
-    if(days[i] < 20){
-        lessThen20.push(i);
-    }
-    if(min > days[i]){
-        min = i;
-    }
-    if(max < days[i]){
-        max = i;
-    }
-    if(i >= 4){
-        workingDays += days[i];
-    }else{
-        weekend += days[i];
-    }
-}
-#3
-let da = ["Костя","Мирослав","Іван","Андрій","Іван"];
-let count = 0;
-for(let i = 0; i < da.length; i++){
-    if(da[i] == "Іван"){
-        count++;
-    }
-}
-alert(count);
+        let arr = [4,3,5,2,3]
+        let min = 5
+        let sum = arr.reduce((akk,x,i)=>{
+            akk += arr[i]
+            if(arr[i] < min){
+                min = arr[i]
+            }
+            return akk
+        },0)
+        alert(sum / arr.length)
+        switch(min){
+            case 5:
+            case 4:
+                alert("хорошист")
+                break;
+            case 3:
+                alert("нормальний")
+                break;
+            case 2:
+            case 1:
+                alert("двойошник")
+                break;
+        }
+        let arr = [70,50,60,30,15,15,80] 
+        let min = 100
+        let max = 0
+        let working_days = 0
+        let weekend_days = 0
+        let minday = 0
+        let maxday = 0
+        let bad_days = []
+        arr.forEach((x,i,arr) => {
+            if(i < 5){
+                working_days += arr[i]
+            }else{
+                weekend_days += arr[i]
+            }
+            if(arr[i] < min){
+                min = arr[i]
+                mainday = i
+            }
+            if(arr[i] > max){
+                max = arr[i]
+                maxday = i
+            }
+            if(arr[i] <= 20){
+                bad_days.push(arr[i])
+            }
+        })
+        alert(min)
+        alert(max)
+        alert(bad_days)
+        alert(working_days)
+        alert(weekend_days)
+        
+        let arr = ["Іван","Стас","Мирослав","Іван"]
+        let count = arr.reduce((akk, x, i) => {
+            if(arr[i] == "Іван"){
+                akk++
+            }
+            return akk
+        },0)
+        alert(count)
+        
+        let arr = [0,0,0,0,0,0,0,0,0,0,0]
+        let newarr = arr.map((x)=> -500 + Math.floor(Math.random()*1000))
+        let ans = 0;
+        let total = 0
+        for(let ans = prompt(); ans != null; ans = prompt()){
+            total += newarr[+ans]
+            alert(total)
+        }
